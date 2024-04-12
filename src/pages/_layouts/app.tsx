@@ -20,6 +20,8 @@ export function AppLayout() {
 
           // if (status === 401 && code === 'UNAUTHORIZED') {
           //   navigate('/sign-in', { replace: true })
+          // } else {
+          //   throw error
           // }
 
           const message = error.response?.data.message
@@ -27,6 +29,8 @@ export function AppLayout() {
 
           if (message === 'Unauthorized.' && name === 'Error') {
             navigate('/sign-in', { replace: true })
+          } else {
+            throw error
           }
         }
       },
