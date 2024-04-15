@@ -101,7 +101,7 @@ export function StoreProfileDialog() {
     }
 
     return (
-        <DialogContent>
+        <DialogContent className='sm:max-w-[520px]'>
             <DialogHeader>
                 <DialogTitle>Perfil da loja</DialogTitle>
 
