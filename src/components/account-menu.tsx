@@ -29,12 +29,11 @@ export function AccountMenu() {
     staleTime: Infinity,
   })
 
-  const { data: managedRestaurant, isLoading: isLoadingManagedRestaurant } =
-    useQuery({
-      queryKey: ['managed-restaurant'],
-      queryFn: getManagedRestaurant,
-      staleTime: Infinity,
-    })
+  const { data: managedRestaurant, isLoading: isLoadingManagedRestaurant } = useQuery({
+    queryKey: ['managed-restaurant'],
+    queryFn: getManagedRestaurant,
+    staleTime: Infinity,
+  })
 
   const { mutateAsync: signOutFn, isPending: isSigningOut } = useMutation({
     mutationFn: signOut,
@@ -56,6 +55,7 @@ export function AccountMenu() {
             ) : (
               managedRestaurant?.name
             )}
+
             <ChevronDown className="h-4 w-4" />
           </Button>
         </DropdownMenuTrigger>

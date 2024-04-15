@@ -80,6 +80,7 @@ export function SignUp() {
               <Input
                 id='restaurantName'
                 type='text'
+                autoCorrect='off'
                 {...register('restaurantName')}
               />
             </div>
@@ -90,6 +91,7 @@ export function SignUp() {
               <Input
                 id='managerName'
                 type='text'
+                autoCorrect='off'
                 {...register('managerName')}
               />
             </div>
@@ -97,13 +99,25 @@ export function SignUp() {
             <div className='space-y-2'>
               <Label htmlFor='email'>Seu e-mail</Label>
 
-              <Input id='email' type='email' {...register('email')} />
+              <Input
+                id='email'
+                type='email'
+                autoCapitalize='none'
+                autoComplete='email'
+                autoCorrect='off'
+                {...register('email')}
+              />
             </div>
 
             <div className='space-y-2'>
               <Label htmlFor='phone'>Seu celular</Label>
 
-              <Input id='phone' type='tel' {...register('phone')} />
+              <Input
+                id='phone'
+                type='tel'
+                placeholder='(99) 99999-9999'
+                {...register('phone')}
+              />
             </div>
 
             <Button disabled={isSubmitting} className='w-full' type='submit'>

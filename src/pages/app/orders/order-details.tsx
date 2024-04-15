@@ -32,6 +32,7 @@ export function OrderDetails({ orderId, open }: OrderDetailsProps) {
   const { data: order } = useQuery({
     queryKey: ['order', orderId],
     queryFn: () => getOrderDetails({ orderId }),
+    staleTime: 1000 * 60 * 15, // 15 minutes
     enabled: open,
   })
 

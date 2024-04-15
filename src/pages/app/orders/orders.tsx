@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
+import { Loader2Icon } from 'lucide-react'
 import { Helmet } from 'react-helmet-async'
 import { useSearchParams } from 'react-router-dom'
 import { z } from 'zod'
@@ -54,7 +55,13 @@ export function Orders() {
       <Helmet title='Pedidos' />
 
       <div className='flex flex-col gap-4'>
-        <h1 className='text-3xl font-bold tracking-tight'>Pedidos</h1>
+        <h1 className='flex items-center gap-3 text-3xl font-bold tracking-tight'>
+          Pedidos
+
+          {isLoadingOrders && (
+            <Loader2Icon className="h-5 w-5 animate-spin text-muted-foreground" />
+          )}
+        </h1>
       </div>
 
       <div className='space-y-2.5'>
